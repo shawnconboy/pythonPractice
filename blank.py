@@ -135,3 +135,7 @@ while True:
         continue
     else:
         print('Invalid entry')
+
+    computerChoice = random.choice(['r', 'p', 's'])
+
+    print('Computer Choice: ')
