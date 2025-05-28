@@ -3,22 +3,33 @@
 
 # this program was written by Shawn Conboy on May 20th 2025
 
-bill = input('Please enter your bill amount : ')
+import time
 
-# calculate tip amounts
+response = 'y'.lower()
 
-tip15 = float(bill) * 0.15          # This is the 15% tip
+while response == 'y'.lower():
+    bill = input('Please enter your bill amount : ')
 
-tip20 = float(bill) * 0.20          # This is the 20% tip
+    # calculate tip amounts
 
-amount15 = tip15 + float(bill)
+    tip15 = float(bill) * 0.15          # This is the 15% tip
 
-amount20 = tip20 + float(bill)
+    tip20 = float(bill) * 0.20          # This is the 20% tip
 
-# Display results
+    amount15 = tip15 + float(bill)
 
-print()
+    amount20 = tip20 + float(bill)
 
-print ('The amount of your tip if you tip 15% is $' + format(tip15, ',.2f') + ' And the total amount is ' +  format(amount15, ',.2f'))
+    # Display results
 
-print()
+    print()
+
+    print ('The amount of your tip if you tip 15% is $' + format(tip15, ',.2f') + ' And the total amount is ' +  format(amount15, ',.2f'))
+
+    print ('The amount of your tip if you tip 15% is $' + format(tip20, ',.2f') + ' And the total amount is ' +  format(amount20, ',.2f'))
+
+    print()
+
+    time.sleep(5)
+
+    response = input("Do you want to calculate another tip?(Y/N) : ")

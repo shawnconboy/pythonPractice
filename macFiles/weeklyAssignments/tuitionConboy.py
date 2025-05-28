@@ -14,11 +14,11 @@ name = input('Please enter your name : ')
 
 # Assing tuition value, and ask for total credit hours
 tuition = 198
-credithours = input('How many credit hours are you taking? : ')
+creditHours = int(input('How many credit hours are you taking? : '))
 
 
 # Calculate tuition cost by converting credit hours to an int to do arithmetic
-totalPrice = (tuition * (int(credithours)))
+totalPrice = tuition * creditHours
 
 # Display output showing summary of program
 print()
