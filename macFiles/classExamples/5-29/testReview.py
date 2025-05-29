@@ -28,10 +28,8 @@ while response.lower() == "y":
     print("-"*35)
     print()
 
-    print(f"1 -- Guest      ${fullPrice:>15.2f}")
-    # print(f"2 -- Alumni     ${alumniPrice:.2f}")
-    # print(f"2 -- Alumni  ${alumniPrice:16.2f}".rjust(27))
-    print(f"2 -- Alumni  {'$'+format(alumniPrice, '15.2f')}")
+    print(f"1 -- Guest      ${fullPrice:.2f}")
+    print(f"2 -- Alumni     ${alumniPrice:.2f}")
     print(f"3 -- Student    ${studentPrice:.2f}")
     print(f"4 -- Staff      ${staffPrice:.2f}")
     print()
@@ -52,7 +50,8 @@ while response.lower() == "y":
         continue
 
     print()
-    tShirt = input("Would you like to purchase a T-Shirt for $10.00 as well? (Y/N) : ")
+    print("Would you like to purchase a")
+    tShirt = input("T-Shirt for $10.00 as well? (Y/N) : ")
 
     if tShirt.lower() == "y":
         tShirtPrice = 10
@@ -61,11 +60,17 @@ while response.lower() == "y":
 
     total = ticketPrice + tShirtPrice
 
+
+    print("_"*35)
+    print()
     print(f"Your total is ${total:.2f}.")
     print(f"Thank you.")
+    print("-"*35)
 
+
+    print()
     response = input("Would you like to order again? (Y/N) : ")
-    time.sleep(2)
+    time.sleep(.5)
 
 print("Program has ended.")
 time.sleep(3)
