@@ -33,7 +33,7 @@ while response.lower() == 'y':
 
     # Display user info
     print(f'Hello, {name}.')
-    print("Your total taxable in come is $ " + format(taxableIncome,',.2f')+ ".")
+    print(f"Your total taxable in come is ${taxableIncome:,.2f}.")
     print(f"That puts you at %{percentTax}, percent being taxed.")
 
     # Update read

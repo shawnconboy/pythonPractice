@@ -3,11 +3,13 @@
 
 # this program was written by Shawn Conboy on May 20th 2025
 
-import time
+import time, os
 
 response = 'y'.lower()
 
 while response == 'y'.lower():
+    os.system("clear")
+
     bill = input('Please enter your bill amount : ')
 
     # calculate tip amounts
