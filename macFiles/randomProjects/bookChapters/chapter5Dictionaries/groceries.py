@@ -3,12 +3,12 @@ import time, sys, os
 os.system("clear")
 
 # This defines the dictionary to hold all the items
-groceryList = []
+groceryList = [{"Item" : "Shoes", "Price" : 60.00, "Quantity" : 1}]
 
 while True:
     os.system("clear")
     print()
-    print("Grocery List")
+    print("Shopping List")
     print("-"*35)
     print()
 
@@ -26,11 +26,18 @@ while True:
     print("3 -- Quit")
     print()
 
-    selection = int(input("Make a selection : "))
+    try:
+        selection = int(input("Make a selection : "))
+    except ValueError:
+        print("Invalid selection. Please enter a number from 1 to 3.")
+        time.sleep(2)
+        continue
+
     print()
 
     if selection == 1:
         name = input("Please enter item name : ")
+        name = name.capitalize()
         price = float(input("Please enter price : "))
         quantity = int(input("Please enter quantity : "))
 
@@ -43,7 +50,17 @@ while True:
         time.sleep(1)
 
     elif selection == 2:
-        print("Please enter item to be deleted : ")
+            name = input("Enter item name to remove : ")
+            found = False
+            for item in groceryList:
+                if item["Item"].lower() == name.lower():
+                    groceryList.remove(item)
+                    print(f"{name} removed!")
+                    time.sleep(1)
+                    found = True
+                    break
+            if not found:
+                print(f"{name} not found in the list.")
 
     elif selection == 3:
         print("Program ended.")
