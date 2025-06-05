@@ -6,7 +6,7 @@ response.lower()
 
 # While wraps code in body to be used for multiple teachers
 while response == 'y':
-    os.system("cls")
+    os.system("clear")
     # simple ui formatting
     print()
     print("Wayne County Board Certification")
@@ -31,12 +31,11 @@ while response == 'y':
 
     # calculations to determine increase
 
-    newSalary = currentSalary * increase
+    salaryIncrease = currentSalary * increase
+    newSalary = currentSalary + salaryIncrease
 
     if isCertified == 'y':
         newSalary += 5000
-    else:
-        newSalary = (currentSalary * increase) + currentSalary
 
 
     # output to the user
