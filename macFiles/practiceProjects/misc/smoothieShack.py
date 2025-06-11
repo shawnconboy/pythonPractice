@@ -28,7 +28,7 @@ def takeOrder():
             subTotal = 4.99
             total += subTotal
         elif selection == 3:
-            subTotal = 4.99
+            subTotal = 4.99 
             total += subTotal
         elif selection == 4:
             subTotal = 4.99
