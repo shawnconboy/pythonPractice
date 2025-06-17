@@ -1,8 +1,8 @@
 import time, sys, os
 
-# clears screen
+# clears screen for Windows or Mac/Linux
 def clearScreen():
-    os.system("clear")
+    os.system("cls" if os.name == "nt" else "clear")
 
 # makes menu
 def menu():
@@ -11,59 +11,55 @@ def menu():
     print("Type\t\tCost")
     print()
     for i in shippingType:
-        cost = shippingType[i]
-        print(f"{i}\t\t${cost}")
+        print(f"{i}\t\t${shippingType[i]:.2f}")
 
 # dictionary for package types
-shippingType = {5:7.40,
-                6:7.70,
-                7:8,
-                9:13.75,
-                10:19.30}
+shippingType = {
+    5: 7.40,
+    6: 7.70,
+    7: 8.00,
+    9: 13.75,
+    10: 19.30
+}
 
+# main loop for purchases
+response = "y"
+while response.lower() == "y":
+    subTotal = 0
+    total = 0
 
-# ***********************************************************
-# ***********************************************************
-# main section
-
-
-subTotal = 0
-total = 0
-
-# prime loop for purchases
-response = "y".lower()
-while response == "y":
     clearScreen()
     menu()
 
-    # if user choice is not an integer value, program does not
-    # move forward
     try:
-        userChoice = int(input("What shipping type do you need? : "))
+        userChoice = int(input("\nWhat shipping type do you need? : "))
     except ValueError:
         print("Please enter a number from 5 to 10.")
+        time.sleep(2)
         continue
 
     if userChoice in shippingType:
         price = shippingType[userChoice]
         subTotal += price
-        print(f"\nYou chose {userChoice}.")
-        print(f"Your balance is {subTotal}")
+        print(f"\nYou chose type {userChoice}.")
+        print(f"Your balance is ${subTotal:.2f}")
+
         insurance = input("\nWould you like to add insurance? (Y/N) : ").lower()
 
         if insurance == "y":
             if subTotal <= 50:
                 subTotal += 2.20
             elif subTotal <= 100:
-                subTotal = 2.45
+                subTotal += 2.45
             else:
-                subTotal = 3
+                subTotal += 3.00
+            print("Insurance has been added!")
 
         total = subTotal
-
-        print(f"\nYour final total is ${total}")
-
-        response = input("\nWould you like to make another purchase? (Y/N) : ")
+        print(f"\nYour final total is ${total:.2f}")
     else:
         print("Wrong choice. Try again.")
+        time.sleep(2)
         continue
+
+    response = input("\nWould you like to make another purchase? (Y/N) : ")
