@@ -43,9 +43,9 @@ for i in foundUrls:
     urlList.append(i)
 
 print()
-# Print results and copy them to clipboard
-# if found matches is greater than 0, something
-# matching our criteria has been found
+#  Print results and copy them to clipboard
+#  if found matches is greater than 0, something
+#  matching our criteria has been found
 if len(urlList) > 0:
     print("Copied:")
     print("-"*20)

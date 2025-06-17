@@ -5,16 +5,31 @@ def clearScreen():
 
 clearScreen()
 
-urlMatch = re.compile(r"https?\:\/\/(www\.[a-zA-Z0-9]+\.\w[a-z]+)")
+# Define the regex pattern with re.VERBOSE for readability
+phoneRegex = re.compile(r"""(
+    (\d{3})     # area code
+    -           # hyphen
+    (\d{3})     # first 3 digits
+    -           # hyphen
+    (\d{4})     # last 4 digits
+)""", re.VERBOSE)
 
-userInput = input("Please enter your text here : ")
+# Grab full page text from clipboard
+phoneSearch = pyperclip.paste()
 
-match = urlMatch.search(userInput)
+# Find all matches
+phoneMatches = phoneRegex.findall(phoneSearch)
 
-if match:
-    print()
-    print(match.group(0))
-    pyperclip.copy(match.group())
-    print("✅ Match copied to clipboard!")
+# Extract only the full match from each tuple
+results = [match[0] for match in phoneMatches]
+
+# Output results
+if results:
+    print("Phone numbers found:")
+    print("-" * 20)
+    for number in results:
+        print(number)
+    pyperclip.copy('\n'.join(results))
+    print("\nCopied to clipboard!")
 else:
-    print("No matches.")
+    print("No phone numbers found.")
