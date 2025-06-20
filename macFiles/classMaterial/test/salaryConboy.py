@@ -18,7 +18,7 @@ def menu():
 
 # this wipes the screen. you know?
 def clearScreen():
-    os.system("cls")
+    os.system("clear")
 
 
 # here's the main program
