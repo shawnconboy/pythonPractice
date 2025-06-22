@@ -1,1 +1,1 @@
-Your tip amout is ${tip15:.2f}
+m
