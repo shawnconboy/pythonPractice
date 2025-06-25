@@ -1,0 +1,18 @@
+h1 {
+    color: pink;
+    text-align: center;
+}
+
+img {
+    height: 400px;
+    width: 550px;
+    border: 10px dotted pink;
+}
+
+body {
+    background-color: lightcyan;
+}
+
+a {
+    border: 9px dotted pink;
+}

@@ -13,7 +13,7 @@ foundMatches = emailRegex.findall(sampleData)
 
 # Print the results
 if len(foundMatches) > 0:
-    print("✔ Found email(s):")
+    print("✔ Found email(s) : \n")
     for email in foundMatches:
         print("-", email)
     
