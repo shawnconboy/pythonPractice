@@ -1,6 +1,7 @@
 # this program will calculate tips at 15 and 20 %
 # users enters amount of their bill
 
+
 # this program was written by Shawn Conboy on May 20th 2025
 
 import time, os
