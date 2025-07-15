@@ -2,7 +2,7 @@
 import time, os, sys
 
 # import dictionary for menu
-from techWave import current_inventory
+from TechWave import current_inventory
 
 def clearScreen():
     os.system("clear")
