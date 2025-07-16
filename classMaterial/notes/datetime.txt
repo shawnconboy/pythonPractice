@@ -1,0 +1,59 @@
+
+Python Helper Summary — datetime (Date and Time Tools)
+======================================================
+
+Term / Function                   | Description
+----------------------------------|----------------------------------------------------------
+datetime.now()                    | Returns the current date and time
+datetime.today()                  | Alias of now(), current local datetime
+datetime(year, month, day, ...)  | Create a custom date or datetime object
+date.today()                     | Returns today's date only (no time)
+timedelta(days=1)                | Used to add or subtract days/time
+strftime("%Y-%m-%d")             | Formats a datetime object as a string
+strptime("2023-07-16", "%Y-%m-%d") | Parses a date string into a datetime object
+
+Extra Notes:
+-------------
+- Supports time comparisons, addition/subtraction
+- You can use `datetime` for full timestamps and `date` for just calendar days
+
+Imports:
+--------
+from datetime import datetime, timedelta, date
+
+Example:
+---------
+from datetime import datetime, timedelta
+
+now = datetime.now()
+print("Now:", now)
+
+yesterday = now - timedelta(days=1)
+print("Yesterday:", yesterday)
+
+formatted = now.strftime("%B %d, %Y at %I:%M %p")
+print("Formatted:", formatted)
+
+Sample Project: Countdown Timer
+===============================
+What it does:
+-------------
+- Asks for a future time
+- Calculates and prints how much time is left until that moment
+
+Code:
+-----
+from datetime import datetime
+
+target = input("Enter a date and time (YYYY-MM-DD HH:MM): ")
+target_time = datetime.strptime(target, "%Y-%m-%d %H:%M")
+now = datetime.now()
+
+difference = target_time - now
+print("Time remaining:", difference)
+
+Ideas to Expand:
+----------------
+- Display time remaining live using a loop
+- Add alert/notification when countdown hits 0
+- Schedule script actions for specific times

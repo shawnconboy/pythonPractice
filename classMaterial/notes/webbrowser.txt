@@ -1,0 +1,64 @@
+
+Python Helper Summary — webbrowser (Built-In)
+=============================================
+
+Term / Function               | Description
+------------------------------|----------------------------------------------------------
+open(url)                     | Opens the given URL in the default web browser
+open_new(url)                 | Opens URL in a new browser window (if possible)
+open_new_tab(url)             | Opens URL in a new tab (if supported)
+get(using=None)               | Gets a controller object for a specific browser
+register(name, constructor)   | Registers a new browser type manually (rare)
+
+Extra Options:
+---------------
+- Uses your system's default browser unless overridden
+- You can specify a browser like 'firefox' or 'chrome' using get()
+
+Imports:
+--------
+import webbrowser
+
+Example:
+---------
+import webbrowser
+
+webbrowser.open("https://www.google.com")
+webbrowser.open_new_tab("https://www.python.org")
+
+
+*******************************************************************************
+
+Project: Open Study Resources in Tabs
+=====================================
+
+What it does:
+-------------
+- Opens multiple helpful websites in your browser in separate tabs
+
+Requirements:
+-------------
+- webbrowser module (built-in)
+- Internet connection
+
+Code (open_study_tabs.py):
+--------------------------
+import webbrowser
+import time
+
+urls = [
+    "https://docs.python.org/3/",
+    "https://automatetheboringstuff.com/",
+    "https://www.w3schools.com/python/",
+    "https://www.youtube.com/results?search_query=python+automation"
+]
+
+for url in urls:
+    webbrowser.open_new_tab(url)
+    time.sleep(1)  # small delay between openings
+
+Ideas to Expand:
+----------------
+- Add bookmarks based on categories (e.g., 'cheatsheets', 'video tutorials')
+- Let the user type in a search term and open multiple related Google results
+- Make a menu interface to select different resource lists

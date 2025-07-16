@@ -1,0 +1,49 @@
+
+Python Helper Summary — pyperclip (Clipboard Access)
+====================================================
+
+Term / Function               | Description
+------------------------------|----------------------------------------------------------
+copy(text)                    | Copies the given string to the system clipboard
+paste()                       | Returns whatever text is currently on the clipboard
+
+Extra Notes:
+-------------
+- Works across Windows, macOS, and Linux
+- Only supports text (not images or files)
+- You may need to install additional clipboard tools on Linux (e.g., xclip or xsel)
+
+Imports:
+--------
+import pyperclip
+
+Example:
+---------
+import pyperclip
+
+pyperclip.copy("Hello, world!")
+text = pyperclip.paste()
+print("Clipboard content:", text)
+
+Sample Project: Convert Clipboard to Uppercase
+==============================================
+What it does:
+-------------
+- Reads the text from your clipboard
+- Converts it to uppercase
+- Copies the result back to the clipboard
+
+Code:
+-----
+import pyperclip
+
+text = pyperclip.paste()
+upper_text = text.upper()
+pyperclip.copy(upper_text)
+print("Converted to uppercase and copied back to clipboard.")
+
+Ideas to Expand:
+----------------
+- Build a clipboard history tracker
+- Create a clipboard "cleaner" (removes extra spaces or line breaks)
+- Detect if clipboard contains URLs and log them

@@ -1,0 +1,58 @@
+
+Python Helper Summary — requests (HTTP for Humans)
+==================================================
+
+Term / Function               | Description
+------------------------------|----------------------------------------------------------
+get(url)                      | Sends a GET request to fetch a webpage or API data
+post(url, data={})            | Sends a POST request (like submitting a form)
+response.status_code          | HTTP status code (200 = OK, 404 = Not Found, etc.)
+response.text                 | Returns the page content as a string
+response.json()               | Parses JSON response into a Python dictionary
+headers={}                    | Sends custom headers (e.g., for API keys)
+
+Extra Options:
+---------------
+- timeout=10                | Waits up to 10 seconds before giving up
+- params={}                 | Add query parameters to GET request (e.g., ?search=term)
+- raise_for_status()        | Raises an error if the response wasn't successful
+
+Imports:
+--------
+import requests
+
+Example:
+---------
+import requests
+
+response = requests.get("https://api.github.com")
+print(response.status_code)
+print(response.json())
+
+Sample Project: Check Website Status
+====================================
+What it does:
+-------------
+- Checks if a website is online and returns its HTTP status code
+
+Code:
+-----
+import requests
+
+url = input("Enter a website URL: ")
+
+try:
+    response = requests.get(url, timeout=5)
+    print("Status Code:", response.status_code)
+    if response.status_code == 200:
+        print("Site is online!")
+    else:
+        print("Site responded but may have issues.")
+except requests.exceptions.RequestException as e:
+    print("Error:", e)
+
+Ideas to Expand:
+----------------
+- Log website availability over time
+- Fetch weather or news data from public APIs
+- Auto-download text or files from a list of URLs

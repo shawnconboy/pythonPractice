@@ -1,0 +1,63 @@
+
+Python Helper Summary — shutil (Shell Utilities)
+================================================
+
+Term / Function                | Description
+-------------------------------|----------------------------------------------------------
+copy(src, dst)                 | Copies a file from source to destination
+copy2(src, dst)                | Like copy(), but also preserves metadata (timestamps, permissions)
+copytree(src, dst)             | Copies an entire folder and its contents
+rmtree(path)                   | Deletes an entire folder and its contents
+move(src, dst)                 | Moves a file or folder to a new location
+disk_usage(path)               | Returns total, used, and free space for the given path
+make_archive(base_name, format, root_dir) | Creates a ZIP or TAR archive from a folder
+
+Extra Options:
+---------------
+- copytree() will fail if destination folder already exists (unless using dirs_exist_ok=True in Python 3.8+)
+- make_archive formats: 'zip', 'tar', 'gztar', 'bztar', etc.
+
+Imports:
+--------
+import shutil
+import os
+
+Example:
+---------
+import shutil
+
+shutil.copy("report.txt", "backup/report_copy.txt")
+shutil.move("old_folder", "archive/old_folder")
+shutil.rmtree("temp_folder")
+
+Sample Project: Folder Backup Script
+====================================
+
+What it does:
+-------------
+- Copies a folder (and all its files) to a backup directory
+- Adds a timestamp to the backup folder name
+
+Code (backup_folder.py):
+-------------------------
+import shutil
+import os
+import time
+
+source_folder = "my_documents"
+timestamp = time.strftime("%Y%m%d-%H%M%S")
+backup_folder = f"backups/my_documents_backup_{timestamp}"
+
+# Make sure backups folder exists
+os.makedirs("backups", exist_ok=True)
+
+# Copy entire folder
+shutil.copytree(source_folder, backup_folder)
+
+print(f"Backup created at: {backup_folder}")
+
+Ideas to Expand:
+----------------
+- Add compression using make_archive()
+- Log the backup actions in a .txt file
+- Automatically delete backups older than X days

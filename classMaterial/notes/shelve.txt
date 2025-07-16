@@ -1,0 +1,59 @@
+
+Python Helper Summary — shelve (Simple Persistent Storage)
+==========================================================
+
+Term / Function               | Description
+------------------------------|----------------------------------------------------------
+shelve.open(filename)         | Opens or creates a new shelf file (like a persistent dictionary)
+shelf[key] = value            | Stores a value using a string key
+value = shelf[key]            | Retrieves a stored value
+del shelf[key]                | Deletes a key from the shelf
+list(shelf.keys())            | Returns a list of all stored keys
+list(shelf.values())          | Returns all values stored
+shelf.close()                 | Saves and closes the shelf file
+
+Extra Options:
+---------------
+- Shelve files usually create `.db`, `.dat`, or `.bak` files on disk
+- Values must be pickleable (simple data types, not functions or open files)
+
+Imports:
+--------
+import shelve
+
+Example:
+---------
+import shelve
+
+shelf = shelve.open("mydata")
+shelf["name"] = "Shawn"
+shelf["score"] = 95
+print(shelf["name"])  # Outputs: Shawn
+shelf.close()
+
+Sample Project: Save Game Data
+==============================
+What it does:
+-------------
+- Stores a player's name, level, and score between runs
+
+Code:
+-----
+import shelve
+
+with shelve.open("savefile") as save:
+    save["player"] = {
+        "name": "Alex",
+        "level": 3,
+        "score": 8700
+    }
+
+# Later...
+with shelve.open("savefile") as save:
+    data = save["player"]
+    print(data["name"], data["level"], data["score"])
+
+Ideas to Expand:
+----------------
+- Save settings, preferences, or any session data for your scripts
+- Replace a global dictionary with a shelf to make it persistent

@@ -1,0 +1,60 @@
+
+Python Helper Summary — bs4 (BeautifulSoup)
+===========================================
+
+Term / Function                 | Description
+--------------------------------|----------------------------------------------------------
+BeautifulSoup(html, "html.parser") | Parses HTML text into a searchable object
+soup.select(selector)           | Returns a list of elements matching a CSS selector
+soup.find(tag)                  | Finds the first matching tag
+soup.find_all(tag)              | Finds all matching tags
+element.get("attribute")        | Gets the value of an attribute (e.g., href)
+element.text                    | Returns the inner text of an element
+
+Extra Notes:
+-------------
+- Requires requests or another method to fetch the HTML first
+- Supports CSS selectors like 'div', '.class', '#id', etc.
+- Works well with APIs, scraping, and HTML cleaning
+
+Imports:
+--------
+from bs4 import BeautifulSoup
+
+Example:
+---------
+from bs4 import BeautifulSoup
+import requests
+
+response = requests.get("https://example.com")
+soup = BeautifulSoup(response.text, "html.parser")
+
+links = soup.select("a")
+for link in links:
+    print(link.get("href"))
+
+Sample Project: Scrape Article Headlines
+========================================
+What it does:
+-------------
+- Fetches a news website
+- Extracts and prints all article headlines
+
+Code:
+-----
+import requests
+from bs4 import BeautifulSoup
+
+url = "https://news.ycombinator.com"
+response = requests.get(url)
+soup = BeautifulSoup(response.text, "html.parser")
+
+titles = soup.select(".titleline a")
+for title in titles:
+    print(title.text)
+
+Ideas to Expand:
+----------------
+- Export the scraped text to a CSV file
+- Track headlines from multiple sources
+- Alert you when keywords appear in titles

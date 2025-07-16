@@ -1,0 +1,104 @@
+
+Python Helper Summary — pyautogui (GUI Automation)
+==================================================
+
+Term / Function               | Description
+------------------------------|----------------------------------------------------------
+moveTo(x, y, duration=1)      | Moves the mouse to (x, y) over optional time in seconds
+click(x, y)                   | Clicks at the given coordinates
+rightClick(), middleClick()   | Performs right or middle click
+doubleClick()                 | Double left-click
+moveRel(x, y)                 | Moves mouse relative to current position
+dragTo(x, y, duration=1)      | Drags the mouse to (x, y) over time
+scroll(n)                     | Scrolls up (n > 0) or down (n < 0)
+typewrite("hello")            | Types out the given string
+press("enter")                | Presses a single keyboard key
+hotkey("ctrl", "c")           | Presses key combo like Ctrl+C
+
+Extra Options:
+---------------
+- pause = 0.5                 | Adds a delay after each function call (default: 0.1s)
+- FAILSAFE = True             | Moving mouse to top-left corner stops the program
+
+Screen Functions:
+------------------
+- size()                      | Returns screen width and height as tuple
+- position()                  | Returns current mouse position as tuple
+- locateOnScreen("file.png")  | Finds the position of image on screen (if visible)
+- screenshot()                | Takes a screenshot and returns an image object
+
+Imports:
+--------
+import pyautogui
+
+Example:
+---------
+import pyautogui
+
+pyautogui.moveTo(500, 300, duration=1)
+pyautogui.click()
+pyautogui.typewrite("Hello world!", interval=0.1)
+pyautogui.press("enter")
+
+
+*******************************************************************************
+
+
+Project: Auto-Fill a Google Search Using pyautogui
+==================================================
+
+What it does:
+-------------
+- Opens a browser to Google
+- Clicks on the search bar
+- Types "Python automation with pyautogui"
+- Presses Enter to search
+
+Requirements:
+-------------
+- pyautogui module
+- webbrowser module (built-in)
+- Internet connection
+
+Install pyautogui:
+------------------
+pip install pyautogui
+
+Code (auto_google_search.py):
+-----------------------------
+import pyautogui
+import time
+import webbrowser
+
+# Step 1: Open Google
+webbrowser.open("https://www.google.com")
+time.sleep(3)  # wait for it to load
+
+# Step 2: Click on search bar (adjust x, y for your screen)
+pyautogui.click(500, 400)
+time.sleep(0.5)
+
+# Step 3: Type the search query
+pyautogui.typewrite("Python automation with pyautogui", interval=0.1)
+
+# Step 4: Press Enter
+pyautogui.press("enter")
+
+Finding Your Own Screen Coordinates:
+------------------------------------
+Run this script to get your mouse position:
+import pyautogui
+print(pyautogui.position())
+
+Move your mouse where you want to click and note the coordinates.
+
+Safety Tip:
+-----------
+Move your mouse to the top-left corner of the screen to immediately stop any running pyautogui script. This is a built-in failsafe.
+
+Ideas to Expand:
+----------------
+- Take a screenshot after search results appear
+- Automate form filling (name, email, etc.)
+- Loop through a list of search terms
+- Create a menu to trigger different automated tasks
