@@ -1,0 +1,46 @@
+
+Python Helper Summary — OpenPyXL
+================================
+
+Term / Function             | Description
+----------------------------|----------------------------------------------------------
+load_workbook(filename)     | Opens an existing Excel file (.xlsx)
+Workbook.active             | Gets the active worksheet in the workbook
+sheet["A1"]                 | Access a specific cell by its Excel reference
+sheet[f"B{row}"]            | Access cell in Column B using dynamic row number
+cell.value                  | Get or set the value stored in a cell
+sheet.max_row               | Returns the number of the last row with data
+sheet.max_column            | Returns the number of the last column with data
+wb.save("filename.xlsx")    | Saves the Excel workbook to a file
+os.chdir(path)              | Changes the current working directory
+os.path.exists("file.xlsx") | Checks if the file exists before opening or saving
+time.sleep(seconds)         | Pauses the program for a number of seconds
+sys.exit()                  | Exits or stops the Python program
+
+Extra Options:
+---------------
+- sheet.title               | Gets or sets the sheet’s name
+- sheet.append([data])      | Appends a new row of data at the bottom
+- wb.create_sheet(name)     | Adds a new worksheet to the workbook
+- wb.sheetnames             | Returns a list of all sheet names
+- wb.remove(sheet)          | Removes a worksheet from the workbook
+
+Imports:
+--------
+import openpyxl
+import os
+import sys
+import time
+
+Example:
+---------
+import openpyxl
+wb = openpyxl.load_workbook("myFile.xlsx")
+sheet = wb.active
+
+for row in range(2, sheet.max_row + 1):
+    value = sheet[f"A{row}"].value
+    print(value)
+
+sheet["B2"].value = "Updated"
+wb.save("updatedFile.xlsx")

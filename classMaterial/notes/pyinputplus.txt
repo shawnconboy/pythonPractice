@@ -1,0 +1,29 @@
+Python Helper Summary — PyInputPlus
+===================================
+
+Term / Function             | Description
+----------------------------|----------------------------------------------------------
+inputStr()                  | Accepts a non-empty string input
+inputInt()                  | Accepts only integer values
+inputFloat()                | Accepts only float (decimal) values
+inputChoice(['a','b'])      | Only allows a value from the given list of options
+inputMenu(['a','b','c'])    | Displays options as a numbered menu
+inputYesNo()                | Only accepts 'yes' or 'no'
+inputDate()                 | Accepts a properly formatted date
+inputEmail()                | Validates email address format
+inputCustom(func)           | Accepts input only if your function returns True
+
+Extra Options:
+---------------
+- allowRegexes=[]           | Accept specific patterns even if normally invalid
+- blockRegexes=[]           | Reject specific patterns
+- limit=3                   | Max attempts before exception is raised
+- timeout=10                | Time (in seconds) to wait before auto-failing
+
+Import:
+--------
+import pyinputplus as pyip
+
+Example:
+---------
+age = pyip.inputInt(prompt="Enter your age: ")

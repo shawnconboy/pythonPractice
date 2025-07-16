@@ -1,0 +1,36 @@
+
+Python Helper Summary — pprint (Pretty Print)
+=============================================
+
+Term / Function             | Description
+----------------------------|----------------------------------------------------------
+pprint(data)                | Nicely prints data (like dictionaries or lists) in a readable, indented format
+pformat(data)               | Returns a pretty-printed string version of the data (instead of printing it)
+width=                      | Sets max line width for formatting (default: 80)
+sort_dicts=False            | Keeps dict keys in original order (Python 3.8+)
+compact=True                | Tries to fit more data on one line (less vertical space)
+
+Extra Options:
+---------------
+- depth=n                  | Limits how deep to go when printing nested structures
+- indent=n                 | Sets number of spaces for each indent level
+
+Imports:
+--------
+from pprint import pprint
+from pprint import pformat
+
+Example:
+---------
+from pprint import pprint, pformat
+
+my_data = {
+    "name": "Alice",
+    "scores": [100, 98, 95],
+    "details": {"age": 20, "major": "CS"}
+}
+
+pprint(my_data)
+
+formatted = pformat(my_data, width=40, compact=True)
+print(formatted)
