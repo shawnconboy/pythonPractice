@@ -1,49 +1,4 @@
 
-Python Helper Summary — pyautogui (GUI Automation)
-==================================================
-
-Term / Function               | Description
-------------------------------|----------------------------------------------------------
-moveTo(x, y, duration=1)      | Moves the mouse to (x, y) over optional time in seconds
-click(x, y)                   | Clicks at the given coordinates
-rightClick(), middleClick()   | Performs right or middle click
-doubleClick()                 | Double left-click
-moveRel(x, y)                 | Moves mouse relative to current position
-dragTo(x, y, duration=1)      | Drags the mouse to (x, y) over time
-scroll(n)                     | Scrolls up (n > 0) or down (n < 0)
-typewrite("hello")            | Types out the given string
-press("enter")                | Presses a single keyboard key
-hotkey("ctrl", "c")           | Presses key combo like Ctrl+C
-
-Extra Options:
----------------
-- pause = 0.5                 | Adds a delay after each function call (default: 0.1s)
-- FAILSAFE = True             | Moving mouse to top-left corner stops the program
-
-Screen Functions:
-------------------
-- size()                      | Returns screen width and height as tuple
-- position()                  | Returns current mouse position as tuple
-- locateOnScreen("file.png")  | Finds the position of image on screen (if visible)
-- screenshot()                | Takes a screenshot and returns an image object
-
-Imports:
---------
-import pyautogui
-
-Example:
----------
-import pyautogui
-
-pyautogui.moveTo(500, 300, duration=1)
-pyautogui.click()
-pyautogui.typewrite("Hello world!", interval=0.1)
-pyautogui.press("enter")
-
-
-*******************************************************************************
-
-
 Project: Auto-Fill a Google Search Using pyautogui
 ==================================================
 

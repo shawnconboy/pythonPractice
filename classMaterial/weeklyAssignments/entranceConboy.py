@@ -21,8 +21,7 @@ import openpyxl, os, sys, time
 
 def clearScreen():
     os.system("clear")
-
-
+    
 clearScreen()
 # make desktop where files are saved / edited at
 os.chdir("/Users/shawnconboy/Desktop")
