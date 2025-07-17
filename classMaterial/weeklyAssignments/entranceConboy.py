@@ -31,15 +31,11 @@ wb = openpyxl.load_workbook("Entrance Test Scores.xlsx")
 sheet = wb.active
 
 # dictionary to replace scores
-scoreUpdates = {
-    "AAS.AOT": 66,
-    "CT.COM": 44,
-    "CT.PPL": 44
-}
+from entranceDict import scoreUpdates
 
 # loop through the rows 
-for row in range(3, sheet.max_row + 1):  # Assuming data is from row 3 to 28
-    acronym = sheet[f"B{row}"].value  # Column B has the Datatel Acronym
+for row in range(3, sheet.max_row + 1):  
+    acronym = sheet[f"B{row}"].value
 
     if acronym in scoreUpdates:
         sheet[f"F{row}"].value = scoreUpdates[acronym]
