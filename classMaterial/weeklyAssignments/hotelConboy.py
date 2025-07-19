@@ -23,7 +23,7 @@ def clearScreen():
         os.system('clear')
 
 # transition to clean the console that i barely used.
-def transition():
+def transition(): 
     clearScreen()
     print(f"The Grand Hotel Reservation System")
     print()
@@ -126,5 +126,5 @@ while response == "y":
 
 
 print("Program shutting down. Thank you.")
-time.sleep(1)
+time.sleep(3)
 sys.exit()
