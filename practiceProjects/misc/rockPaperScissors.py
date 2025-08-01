@@ -70,3 +70,6 @@ while playGame == "y":
         print("Invalid entry")
     
     playGame = input("Would you like to play again?(y/n) : ")
+
+print("Game ended.")
+sys.exit()
