@@ -61,3 +61,4 @@ elif userChoice == 4:
 
     total = num1/num2
     print(f"\n{num1} / {num2} = {total}")
+
