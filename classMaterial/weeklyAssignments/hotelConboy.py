@@ -29,14 +29,10 @@ def transition():
     print()
 
 
-
-
 # Get today's date. Honestly. don't think i used this.
 currentDate = datetime.date.today()
 
 #print(currentDate)             tested to see if it worked
-
-
 
 # ____________________________________________________________________________________________________________________________________
 
@@ -46,7 +42,6 @@ currentDate = datetime.date.today()
 response = "y"
 
 while response == "y":
-
 
     # some variable declarations because i was getting squigglies underneath without having them declared yet. 
     # this may very well be garbage code.
@@ -75,19 +70,21 @@ while response == "y":
     clearScreen()
 
     print("The Grand Hotel Reservation System")
-
     print("\nThank you for that.")
     time.sleep(2)
     clearScreen()
+
     print("The Grand Hotel Reservation System")
     print(f"\nYour arrival date is {arrivalDate.strftime('%A, %B %d, %Y')}")
     time.sleep(2)
+
     departureDate = pyinputplus.inputDate(
         "\nPlease enter your departure date (yyyy-mm-dd) : ",
         formats=["%Y-%m-%d"]
     )
     time.sleep(1)
     clearScreen()
+    
     print("The Grand Hotel Reservation System")
     print("\nThank you again,")
     time.sleep(2)

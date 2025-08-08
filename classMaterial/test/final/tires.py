@@ -1,0 +1,35 @@
+#tire dictionary for final exam
+
+tire_prices = {"All-Season Tire": 120.99,
+    "Winter Tire": 150.50,
+    "Performance Tire": 200.75,
+    "Off-Road Tire": 180.30,
+    "Touring Tire": 130.40,
+    "Truck Tire": 250.60,
+    "Run-Flat Tire": 220.00,
+    "Mud-Terrain Tire": 190.99,
+    "Sport Tire": 210.25,
+    "Eco-Friendly Tire": 140.80,
+    "Highway Tire": 160.00,
+    "Snow Tire": 170.55,
+    "SUV All-Terrain Tire": 240.75,
+    "Ultra High-Performance Tire": 300.90,
+    "Light Truck Tire": 260.45,
+    "Cross-Climate Tire": 195.20,
+    "Low-Profile Tire": 225.50,
+    "Racing Slick Tire": 350.00,
+    "Hybrid Vehicle Tire": 175.30,
+    "Heavy-Duty Truck Tire": 450.99,
+    "Agricultural Tractor Tire": 500.75,
+    "Motorcycle Tire": 110.40,
+    "Bicycle Tire": 45.00,
+    "Industrial Forklift Tire": 600.00,
+    "Compact Car Tire": 100.25,
+    "Vintage Car Tire": 310.99,
+    "All-Weather Tire": 160.75,
+    "Puncture-Resistant Tire": 230.60,
+    "Wide Tire": 190.50,
+    "Temporary Spare Tire": 75.00}
+
+
+    
